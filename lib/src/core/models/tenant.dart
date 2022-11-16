@@ -6,7 +6,7 @@ part 'tenant.g.dart';
 @Freezed()
 class Tenant with _$Tenant {
   factory Tenant({
-    required int? id,
+    required int id,
     @JsonKey(name: 'lease_id') required int? leaseId,
     required String name,
     @JsonKey(name: 'phone_number') required String phoneNumber,
@@ -27,3 +27,13 @@ class Tenant with _$Tenant {
     };
   }
 }
+
+// Sample Lease object from API
+// {
+//   "id": 6,
+//   "lease_id": 1,
+//   "phone_number": "+971555353950",
+//   "email": "surti.huss@gmail.com",
+//   "name": "Hussain Surti",
+//   "wallet_address": "0x41190Dd82D43129C26955063fa2854350e14554B",
+// }
