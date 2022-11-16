@@ -36,7 +36,8 @@ mixin _$Landlord {
 /// @nodoc
 abstract class $LandlordCopyWith<$Res> {
   factory $LandlordCopyWith(Landlord value, $Res Function(Landlord) then) =
-      _$LandlordCopyWithImpl<$Res>;
+      _$LandlordCopyWithImpl<$Res, Landlord>;
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -47,48 +48,51 @@ abstract class $LandlordCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LandlordCopyWithImpl<$Res> implements $LandlordCopyWith<$Res> {
+class _$LandlordCopyWithImpl<$Res, $Val extends Landlord>
+    implements $LandlordCopyWith<$Res> {
   _$LandlordCopyWithImpl(this._value, this._then);
 
-  final Landlord _value;
   // ignore: unused_field
-  final $Res Function(Landlord) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? accountNumber = freezed,
-    Object? sortCode = freezed,
-    Object? email = freezed,
-    Object? phoneNumber = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? accountNumber = null,
+    Object? sortCode = null,
+    Object? email = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      accountNumber: accountNumber == freezed
+      accountNumber: null == accountNumber
           ? _value.accountNumber
           : accountNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      sortCode: sortCode == freezed
+      sortCode: null == sortCode
           ? _value.sortCode
           : sortCode // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -98,6 +102,7 @@ abstract class _$$_LandlordCopyWith<$Res> implements $LandlordCopyWith<$Res> {
           _$_Landlord value, $Res Function(_$_Landlord) then) =
       __$$_LandlordCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -108,46 +113,45 @@ abstract class _$$_LandlordCopyWith<$Res> implements $LandlordCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LandlordCopyWithImpl<$Res> extends _$LandlordCopyWithImpl<$Res>
+class __$$_LandlordCopyWithImpl<$Res>
+    extends _$LandlordCopyWithImpl<$Res, _$_Landlord>
     implements _$$_LandlordCopyWith<$Res> {
   __$$_LandlordCopyWithImpl(
       _$_Landlord _value, $Res Function(_$_Landlord) _then)
-      : super(_value, (v) => _then(v as _$_Landlord));
+      : super(_value, _then);
 
-  @override
-  _$_Landlord get _value => super._value as _$_Landlord;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? accountNumber = freezed,
-    Object? sortCode = freezed,
-    Object? email = freezed,
-    Object? phoneNumber = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? accountNumber = null,
+    Object? sortCode = null,
+    Object? email = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_$_Landlord(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      accountNumber: accountNumber == freezed
+      accountNumber: null == accountNumber
           ? _value.accountNumber
           : accountNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      sortCode: sortCode == freezed
+      sortCode: null == sortCode
           ? _value.sortCode
           : sortCode // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
@@ -193,29 +197,25 @@ class _$_Landlord extends _Landlord {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Landlord &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.accountNumber, accountNumber) &&
-            const DeepCollectionEquality().equals(other.sortCode, sortCode) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.accountNumber, accountNumber) ||
+                other.accountNumber == accountNumber) &&
+            (identical(other.sortCode, sortCode) ||
+                other.sortCode == sortCode) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(accountNumber),
-      const DeepCollectionEquality().hash(sortCode),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(phoneNumber));
+      runtimeType, id, name, accountNumber, sortCode, email, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LandlordCopyWith<_$_Landlord> get copyWith =>
       __$$_LandlordCopyWithImpl<_$_Landlord>(this, _$identity);
 

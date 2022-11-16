@@ -36,7 +36,8 @@ mixin _$PhotoGroup {
 abstract class $PhotoGroupCopyWith<$Res> {
   factory $PhotoGroupCopyWith(
           PhotoGroup value, $Res Function(PhotoGroup) then) =
-      _$PhotoGroupCopyWithImpl<$Res>;
+      _$PhotoGroupCopyWithImpl<$Res, PhotoGroup>;
+  @useResult
   $Res call(
       {int id,
       DateTime date,
@@ -46,43 +47,46 @@ abstract class $PhotoGroupCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PhotoGroupCopyWithImpl<$Res> implements $PhotoGroupCopyWith<$Res> {
+class _$PhotoGroupCopyWithImpl<$Res, $Val extends PhotoGroup>
+    implements $PhotoGroupCopyWith<$Res> {
   _$PhotoGroupCopyWithImpl(this._value, this._then);
 
-  final PhotoGroup _value;
   // ignore: unused_field
-  final $Res Function(PhotoGroup) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? date = freezed,
-    Object? photos = freezed,
-    Object? leaseNumber = freezed,
-    Object? stauts = freezed,
+    Object? id = null,
+    Object? date = null,
+    Object? photos = null,
+    Object? leaseNumber = null,
+    Object? stauts = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: date == freezed
+      date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photos: photos == freezed
+      photos: null == photos
           ? _value.photos
           : photos // ignore: cast_nullable_to_non_nullable
               as List<Photo>,
-      leaseNumber: leaseNumber == freezed
+      leaseNumber: null == leaseNumber
           ? _value.leaseNumber
           : leaseNumber // ignore: cast_nullable_to_non_nullable
               as int,
-      stauts: stauts == freezed
+      stauts: null == stauts
           ? _value.stauts
           : stauts // ignore: cast_nullable_to_non_nullable
               as PhotoStatus,
-    ));
+    ) as $Val);
   }
 }
 
@@ -93,6 +97,7 @@ abstract class _$$_PhotoGroupCopyWith<$Res>
           _$_PhotoGroup value, $Res Function(_$_PhotoGroup) then) =
       __$$_PhotoGroupCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       DateTime date,
@@ -102,41 +107,40 @@ abstract class _$$_PhotoGroupCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PhotoGroupCopyWithImpl<$Res> extends _$PhotoGroupCopyWithImpl<$Res>
+class __$$_PhotoGroupCopyWithImpl<$Res>
+    extends _$PhotoGroupCopyWithImpl<$Res, _$_PhotoGroup>
     implements _$$_PhotoGroupCopyWith<$Res> {
   __$$_PhotoGroupCopyWithImpl(
       _$_PhotoGroup _value, $Res Function(_$_PhotoGroup) _then)
-      : super(_value, (v) => _then(v as _$_PhotoGroup));
+      : super(_value, _then);
 
-  @override
-  _$_PhotoGroup get _value => super._value as _$_PhotoGroup;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? date = freezed,
-    Object? photos = freezed,
-    Object? leaseNumber = freezed,
-    Object? stauts = freezed,
+    Object? id = null,
+    Object? date = null,
+    Object? photos = null,
+    Object? leaseNumber = null,
+    Object? stauts = null,
   }) {
     return _then(_$_PhotoGroup(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: date == freezed
+      date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photos: photos == freezed
+      photos: null == photos
           ? _value._photos
           : photos // ignore: cast_nullable_to_non_nullable
               as List<Photo>,
-      leaseNumber: leaseNumber == freezed
+      leaseNumber: null == leaseNumber
           ? _value.leaseNumber
           : leaseNumber // ignore: cast_nullable_to_non_nullable
               as int,
-      stauts: stauts == freezed
+      stauts: null == stauts
           ? _value.stauts
           : stauts // ignore: cast_nullable_to_non_nullable
               as PhotoStatus,
@@ -185,26 +189,22 @@ class _$_PhotoGroup extends _PhotoGroup {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PhotoGroup &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.date, date) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.date, date) || other.date == date) &&
             const DeepCollectionEquality().equals(other._photos, _photos) &&
-            const DeepCollectionEquality()
-                .equals(other.leaseNumber, leaseNumber) &&
-            const DeepCollectionEquality().equals(other.stauts, stauts));
+            (identical(other.leaseNumber, leaseNumber) ||
+                other.leaseNumber == leaseNumber) &&
+            (identical(other.stauts, stauts) || other.stauts == stauts));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(date),
-      const DeepCollectionEquality().hash(_photos),
-      const DeepCollectionEquality().hash(leaseNumber),
-      const DeepCollectionEquality().hash(stauts));
+  int get hashCode => Object.hash(runtimeType, id, date,
+      const DeepCollectionEquality().hash(_photos), leaseNumber, stauts);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PhotoGroupCopyWith<_$_PhotoGroup> get copyWith =>
       __$$_PhotoGroupCopyWithImpl<_$_PhotoGroup>(this, _$identity);
 

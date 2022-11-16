@@ -37,7 +37,8 @@ mixin _$RentPayment {
 abstract class $RentPaymentCopyWith<$Res> {
   factory $RentPaymentCopyWith(
           RentPayment value, $Res Function(RentPayment) then) =
-      _$RentPaymentCopyWithImpl<$Res>;
+      _$RentPaymentCopyWithImpl<$Res, RentPayment>;
+  @useResult
   $Res call(
       {int id,
       DateTime paidDate,
@@ -48,48 +49,51 @@ abstract class $RentPaymentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RentPaymentCopyWithImpl<$Res> implements $RentPaymentCopyWith<$Res> {
+class _$RentPaymentCopyWithImpl<$Res, $Val extends RentPayment>
+    implements $RentPaymentCopyWith<$Res> {
   _$RentPaymentCopyWithImpl(this._value, this._then);
 
-  final RentPayment _value;
   // ignore: unused_field
-  final $Res Function(RentPayment) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? paidDate = freezed,
-    Object? amount = freezed,
-    Object? leaseId = freezed,
-    Object? rewardAmount = freezed,
-    Object? status = freezed,
+    Object? id = null,
+    Object? paidDate = null,
+    Object? amount = null,
+    Object? leaseId = null,
+    Object? rewardAmount = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      paidDate: paidDate == freezed
+      paidDate: null == paidDate
           ? _value.paidDate
           : paidDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
-      leaseId: leaseId == freezed
+      leaseId: null == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
               as int,
-      rewardAmount: rewardAmount == freezed
+      rewardAmount: null == rewardAmount
           ? _value.rewardAmount
           : rewardAmount // ignore: cast_nullable_to_non_nullable
               as int,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_RentPaymentCopyWith<$Res>
           _$_RentPayment value, $Res Function(_$_RentPayment) then) =
       __$$_RentPaymentCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       DateTime paidDate,
@@ -110,46 +115,45 @@ abstract class _$$_RentPaymentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RentPaymentCopyWithImpl<$Res> extends _$RentPaymentCopyWithImpl<$Res>
+class __$$_RentPaymentCopyWithImpl<$Res>
+    extends _$RentPaymentCopyWithImpl<$Res, _$_RentPayment>
     implements _$$_RentPaymentCopyWith<$Res> {
   __$$_RentPaymentCopyWithImpl(
       _$_RentPayment _value, $Res Function(_$_RentPayment) _then)
-      : super(_value, (v) => _then(v as _$_RentPayment));
+      : super(_value, _then);
 
-  @override
-  _$_RentPayment get _value => super._value as _$_RentPayment;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? paidDate = freezed,
-    Object? amount = freezed,
-    Object? leaseId = freezed,
-    Object? rewardAmount = freezed,
-    Object? status = freezed,
+    Object? id = null,
+    Object? paidDate = null,
+    Object? amount = null,
+    Object? leaseId = null,
+    Object? rewardAmount = null,
+    Object? status = null,
   }) {
     return _then(_$_RentPayment(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      paidDate: paidDate == freezed
+      paidDate: null == paidDate
           ? _value.paidDate
           : paidDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
-      leaseId: leaseId == freezed
+      leaseId: null == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
               as int,
-      rewardAmount: rewardAmount == freezed
+      rewardAmount: null == rewardAmount
           ? _value.rewardAmount
           : rewardAmount // ignore: cast_nullable_to_non_nullable
               as int,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
@@ -195,28 +199,24 @@ class _$_RentPayment extends _RentPayment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RentPayment &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.paidDate, paidDate) &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            const DeepCollectionEquality().equals(other.leaseId, leaseId) &&
-            const DeepCollectionEquality()
-                .equals(other.rewardAmount, rewardAmount) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.paidDate, paidDate) ||
+                other.paidDate == paidDate) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.leaseId, leaseId) || other.leaseId == leaseId) &&
+            (identical(other.rewardAmount, rewardAmount) ||
+                other.rewardAmount == rewardAmount) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(paidDate),
-      const DeepCollectionEquality().hash(amount),
-      const DeepCollectionEquality().hash(leaseId),
-      const DeepCollectionEquality().hash(rewardAmount),
-      const DeepCollectionEquality().hash(status));
+      runtimeType, id, paidDate, amount, leaseId, rewardAmount, status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RentPaymentCopyWith<_$_RentPayment> get copyWith =>
       __$$_RentPaymentCopyWithImpl<_$_RentPayment>(this, _$identity);
 

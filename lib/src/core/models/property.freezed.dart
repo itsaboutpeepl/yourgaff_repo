@@ -43,7 +43,8 @@ mixin _$Property {
 /// @nodoc
 abstract class $PropertyCopyWith<$Res> {
   factory $PropertyCopyWith(Property value, $Res Function(Property) then) =
-      _$PropertyCopyWithImpl<$Res>;
+      _$PropertyCopyWithImpl<$Res, Property>;
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'address_line_one') String addressLineOne,
@@ -55,53 +56,56 @@ abstract class $PropertyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PropertyCopyWithImpl<$Res> implements $PropertyCopyWith<$Res> {
+class _$PropertyCopyWithImpl<$Res, $Val extends Property>
+    implements $PropertyCopyWith<$Res> {
   _$PropertyCopyWithImpl(this._value, this._then);
 
-  final Property _value;
   // ignore: unused_field
-  final $Res Function(Property) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? addressLineOne = freezed,
+    Object? addressLineOne = null,
     Object? addressLineTwo = freezed,
-    Object? postCode = freezed,
+    Object? postCode = null,
     Object? propertyType = freezed,
     Object? landlordId = freezed,
     Object? currentLeaseId = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      addressLineOne: addressLineOne == freezed
+      addressLineOne: null == addressLineOne
           ? _value.addressLineOne
           : addressLineOne // ignore: cast_nullable_to_non_nullable
               as String,
-      addressLineTwo: addressLineTwo == freezed
+      addressLineTwo: freezed == addressLineTwo
           ? _value.addressLineTwo
           : addressLineTwo // ignore: cast_nullable_to_non_nullable
               as String?,
-      postCode: postCode == freezed
+      postCode: null == postCode
           ? _value.postCode
           : postCode // ignore: cast_nullable_to_non_nullable
               as String,
-      propertyType: propertyType == freezed
+      propertyType: freezed == propertyType
           ? _value.propertyType
           : propertyType // ignore: cast_nullable_to_non_nullable
               as String?,
-      landlordId: landlordId == freezed
+      landlordId: freezed == landlordId
           ? _value.landlordId
           : landlordId // ignore: cast_nullable_to_non_nullable
               as int?,
-      currentLeaseId: currentLeaseId == freezed
+      currentLeaseId: freezed == currentLeaseId
           ? _value.currentLeaseId
           : currentLeaseId // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -111,6 +115,7 @@ abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
           _$_Property value, $Res Function(_$_Property) then) =
       __$$_PropertyCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
       @JsonKey(name: 'address_line_one') String addressLineOne,
@@ -122,51 +127,50 @@ abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PropertyCopyWithImpl<$Res> extends _$PropertyCopyWithImpl<$Res>
+class __$$_PropertyCopyWithImpl<$Res>
+    extends _$PropertyCopyWithImpl<$Res, _$_Property>
     implements _$$_PropertyCopyWith<$Res> {
   __$$_PropertyCopyWithImpl(
       _$_Property _value, $Res Function(_$_Property) _then)
-      : super(_value, (v) => _then(v as _$_Property));
+      : super(_value, _then);
 
-  @override
-  _$_Property get _value => super._value as _$_Property;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? addressLineOne = freezed,
+    Object? addressLineOne = null,
     Object? addressLineTwo = freezed,
-    Object? postCode = freezed,
+    Object? postCode = null,
     Object? propertyType = freezed,
     Object? landlordId = freezed,
     Object? currentLeaseId = freezed,
   }) {
     return _then(_$_Property(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      addressLineOne: addressLineOne == freezed
+      addressLineOne: null == addressLineOne
           ? _value.addressLineOne
           : addressLineOne // ignore: cast_nullable_to_non_nullable
               as String,
-      addressLineTwo: addressLineTwo == freezed
+      addressLineTwo: freezed == addressLineTwo
           ? _value.addressLineTwo
           : addressLineTwo // ignore: cast_nullable_to_non_nullable
               as String?,
-      postCode: postCode == freezed
+      postCode: null == postCode
           ? _value.postCode
           : postCode // ignore: cast_nullable_to_non_nullable
               as String,
-      propertyType: propertyType == freezed
+      propertyType: freezed == propertyType
           ? _value.propertyType
           : propertyType // ignore: cast_nullable_to_non_nullable
               as String?,
-      landlordId: landlordId == freezed
+      landlordId: freezed == landlordId
           ? _value.landlordId
           : landlordId // ignore: cast_nullable_to_non_nullable
               as int?,
-      currentLeaseId: currentLeaseId == freezed
+      currentLeaseId: freezed == currentLeaseId
           ? _value.currentLeaseId
           : currentLeaseId // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -221,34 +225,29 @@ class _$_Property extends _Property {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Property &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.addressLineOne, addressLineOne) &&
-            const DeepCollectionEquality()
-                .equals(other.addressLineTwo, addressLineTwo) &&
-            const DeepCollectionEquality().equals(other.postCode, postCode) &&
-            const DeepCollectionEquality()
-                .equals(other.propertyType, propertyType) &&
-            const DeepCollectionEquality()
-                .equals(other.landlordId, landlordId) &&
-            const DeepCollectionEquality()
-                .equals(other.currentLeaseId, currentLeaseId));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.addressLineOne, addressLineOne) ||
+                other.addressLineOne == addressLineOne) &&
+            (identical(other.addressLineTwo, addressLineTwo) ||
+                other.addressLineTwo == addressLineTwo) &&
+            (identical(other.postCode, postCode) ||
+                other.postCode == postCode) &&
+            (identical(other.propertyType, propertyType) ||
+                other.propertyType == propertyType) &&
+            (identical(other.landlordId, landlordId) ||
+                other.landlordId == landlordId) &&
+            (identical(other.currentLeaseId, currentLeaseId) ||
+                other.currentLeaseId == currentLeaseId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(addressLineOne),
-      const DeepCollectionEquality().hash(addressLineTwo),
-      const DeepCollectionEquality().hash(postCode),
-      const DeepCollectionEquality().hash(propertyType),
-      const DeepCollectionEquality().hash(landlordId),
-      const DeepCollectionEquality().hash(currentLeaseId));
+  int get hashCode => Object.hash(runtimeType, id, addressLineOne,
+      addressLineTwo, postCode, propertyType, landlordId, currentLeaseId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PropertyCopyWith<_$_Property> get copyWith =>
       __$$_PropertyCopyWithImpl<_$_Property>(this, _$identity);
 

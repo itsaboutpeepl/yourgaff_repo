@@ -37,7 +37,7 @@ class MockPortalRepository implements PortalRepository {
       return [
         Tenant(
           id: 32,
-          leaseId: 'test',
+          leaseId: 1,
           name: 'Adam Galloowaayy',
           phoneNumber: '8407903521',
           email: 'test@test.com',
@@ -45,7 +45,7 @@ class MockPortalRepository implements PortalRepository {
         ),
         Tenant(
           id: 1231,
-          leaseId: 'lelel',
+          leaseId: 2,
           name: 'John Smith',
           phoneNumber: '3131231231',
           email: 'test@test.com',
@@ -53,7 +53,7 @@ class MockPortalRepository implements PortalRepository {
         ),
         Tenant(
           id: 32312,
-          leaseId: 'sksks',
+          leaseId: 3,
           name: 'Lola Gatren',
           phoneNumber: '20131232',
           email: 'test@test.com',

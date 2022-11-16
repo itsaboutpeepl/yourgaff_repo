@@ -21,13 +21,13 @@ Tenant _$TenantFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Tenant {
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "lease_id")
-  String? get leaseId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'lease_id')
+  int? get leaseId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "phone_number")
+  @JsonKey(name: 'phone_number')
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "wallet_address")
+  @JsonKey(name: 'wallet_address')
   String? get walletAddress => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,59 +38,63 @@ mixin _$Tenant {
 /// @nodoc
 abstract class $TenantCopyWith<$Res> {
   factory $TenantCopyWith(Tenant value, $Res Function(Tenant) then) =
-      _$TenantCopyWithImpl<$Res>;
+      _$TenantCopyWithImpl<$Res, Tenant>;
+  @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: "lease_id") String? leaseId,
+      @JsonKey(name: 'lease_id') int? leaseId,
       String name,
-      @JsonKey(name: "phone_number") String phoneNumber,
+      @JsonKey(name: 'phone_number') String phoneNumber,
       String email,
-      @JsonKey(name: "wallet_address") String? walletAddress});
+      @JsonKey(name: 'wallet_address') String? walletAddress});
 }
 
 /// @nodoc
-class _$TenantCopyWithImpl<$Res> implements $TenantCopyWith<$Res> {
+class _$TenantCopyWithImpl<$Res, $Val extends Tenant>
+    implements $TenantCopyWith<$Res> {
   _$TenantCopyWithImpl(this._value, this._then);
 
-  final Tenant _value;
   // ignore: unused_field
-  final $Res Function(Tenant) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? leaseId = freezed,
-    Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? email = freezed,
+    Object? name = null,
+    Object? phoneNumber = null,
+    Object? email = null,
     Object? walletAddress = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      leaseId: leaseId == freezed
+      leaseId: freezed == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
+              as int?,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      walletAddress: walletAddress == freezed
+      walletAddress: freezed == walletAddress
           ? _value.walletAddress
           : walletAddress // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -99,55 +103,55 @@ abstract class _$$_TenantCopyWith<$Res> implements $TenantCopyWith<$Res> {
   factory _$$_TenantCopyWith(_$_Tenant value, $Res Function(_$_Tenant) then) =
       __$$_TenantCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: "lease_id") String? leaseId,
+      @JsonKey(name: 'lease_id') int? leaseId,
       String name,
-      @JsonKey(name: "phone_number") String phoneNumber,
+      @JsonKey(name: 'phone_number') String phoneNumber,
       String email,
-      @JsonKey(name: "wallet_address") String? walletAddress});
+      @JsonKey(name: 'wallet_address') String? walletAddress});
 }
 
 /// @nodoc
-class __$$_TenantCopyWithImpl<$Res> extends _$TenantCopyWithImpl<$Res>
+class __$$_TenantCopyWithImpl<$Res>
+    extends _$TenantCopyWithImpl<$Res, _$_Tenant>
     implements _$$_TenantCopyWith<$Res> {
   __$$_TenantCopyWithImpl(_$_Tenant _value, $Res Function(_$_Tenant) _then)
-      : super(_value, (v) => _then(v as _$_Tenant));
+      : super(_value, _then);
 
-  @override
-  _$_Tenant get _value => super._value as _$_Tenant;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? leaseId = freezed,
-    Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? email = freezed,
+    Object? name = null,
+    Object? phoneNumber = null,
+    Object? email = null,
     Object? walletAddress = freezed,
   }) {
     return _then(_$_Tenant(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      leaseId: leaseId == freezed
+      leaseId: freezed == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
+              as int?,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      walletAddress: walletAddress == freezed
+      walletAddress: freezed == walletAddress
           ? _value.walletAddress
           : walletAddress // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -160,11 +164,11 @@ class __$$_TenantCopyWithImpl<$Res> extends _$TenantCopyWithImpl<$Res>
 class _$_Tenant extends _Tenant {
   _$_Tenant(
       {required this.id,
-      @JsonKey(name: "lease_id") required this.leaseId,
+      @JsonKey(name: 'lease_id') required this.leaseId,
       required this.name,
-      @JsonKey(name: "phone_number") required this.phoneNumber,
+      @JsonKey(name: 'phone_number') required this.phoneNumber,
       required this.email,
-      @JsonKey(name: "wallet_address") required this.walletAddress})
+      @JsonKey(name: 'wallet_address') required this.walletAddress})
       : super._();
 
   factory _$_Tenant.fromJson(Map<String, dynamic> json) =>
@@ -173,17 +177,17 @@ class _$_Tenant extends _Tenant {
   @override
   final int? id;
   @override
-  @JsonKey(name: "lease_id")
-  final String? leaseId;
+  @JsonKey(name: 'lease_id')
+  final int? leaseId;
   @override
   final String name;
   @override
-  @JsonKey(name: "phone_number")
+  @JsonKey(name: 'phone_number')
   final String phoneNumber;
   @override
   final String email;
   @override
-  @JsonKey(name: "wallet_address")
+  @JsonKey(name: 'wallet_address')
   final String? walletAddress;
 
   @override
@@ -196,29 +200,24 @@ class _$_Tenant extends _Tenant {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Tenant &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.leaseId, leaseId) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality()
-                .equals(other.walletAddress, walletAddress));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.leaseId, leaseId) || other.leaseId == leaseId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.walletAddress, walletAddress) ||
+                other.walletAddress == walletAddress));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(leaseId),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(phoneNumber),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(walletAddress));
+      runtimeType, id, leaseId, name, phoneNumber, email, walletAddress);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TenantCopyWith<_$_Tenant> get copyWith =>
       __$$_TenantCopyWithImpl<_$_Tenant>(this, _$identity);
 
@@ -233,13 +232,13 @@ class _$_Tenant extends _Tenant {
 abstract class _Tenant extends Tenant {
   factory _Tenant(
       {required final int? id,
-      @JsonKey(name: "lease_id")
-          required final String? leaseId,
+      @JsonKey(name: 'lease_id')
+          required final int? leaseId,
       required final String name,
-      @JsonKey(name: "phone_number")
+      @JsonKey(name: 'phone_number')
           required final String phoneNumber,
       required final String email,
-      @JsonKey(name: "wallet_address")
+      @JsonKey(name: 'wallet_address')
           required final String? walletAddress}) = _$_Tenant;
   _Tenant._() : super._();
 
@@ -248,17 +247,17 @@ abstract class _Tenant extends Tenant {
   @override
   int? get id;
   @override
-  @JsonKey(name: "lease_id")
-  String? get leaseId;
+  @JsonKey(name: 'lease_id')
+  int? get leaseId;
   @override
   String get name;
   @override
-  @JsonKey(name: "phone_number")
+  @JsonKey(name: 'phone_number')
   String get phoneNumber;
   @override
   String get email;
   @override
-  @JsonKey(name: "wallet_address")
+  @JsonKey(name: 'wallet_address')
   String? get walletAddress;
   @override
   @JsonKey(ignore: true)

@@ -7,7 +7,7 @@ part 'tenant.g.dart';
 class Tenant with _$Tenant {
   factory Tenant({
     required int? id,
-    @JsonKey(name: 'lease_id') required String? leaseId,
+    @JsonKey(name: 'lease_id') required int? leaseId,
     required String name,
     @JsonKey(name: 'phone_number') required String phoneNumber,
     required String email,

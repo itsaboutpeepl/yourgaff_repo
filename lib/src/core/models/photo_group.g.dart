@@ -11,7 +11,7 @@ _$_PhotoGroup _$$_PhotoGroupFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       date: DateTime.parse(json['date'] as String),
       photos: (json['photos'] as List<dynamic>)
-          .map((e) => Photo.fromJson(e))
+          .map((e) => Photo.fromJson(e as Map<String, dynamic>))
           .toList(),
       leaseNumber: json['leaseNumber'] as int,
       stauts: $enumDecode(_$PhotoStatusEnumMap, json['stauts']),

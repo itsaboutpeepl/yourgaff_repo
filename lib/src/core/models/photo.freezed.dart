@@ -33,43 +33,47 @@ mixin _$Photo {
 /// @nodoc
 abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
-      _$PhotoCopyWithImpl<$Res>;
+      _$PhotoCopyWithImpl<$Res, Photo>;
+  @useResult
   $Res call({int id, String url, int groupPhotoId, String room});
 }
 
 /// @nodoc
-class _$PhotoCopyWithImpl<$Res> implements $PhotoCopyWith<$Res> {
+class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
+    implements $PhotoCopyWith<$Res> {
   _$PhotoCopyWithImpl(this._value, this._then);
 
-  final Photo _value;
   // ignore: unused_field
-  final $Res Function(Photo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? url = freezed,
-    Object? groupPhotoId = freezed,
-    Object? room = freezed,
+    Object? id = null,
+    Object? url = null,
+    Object? groupPhotoId = null,
+    Object? room = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      groupPhotoId: groupPhotoId == freezed
+      groupPhotoId: null == groupPhotoId
           ? _value.groupPhotoId
           : groupPhotoId // ignore: cast_nullable_to_non_nullable
               as int,
-      room: room == freezed
+      room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -78,39 +82,38 @@ abstract class _$$_PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
   factory _$$_PhotoCopyWith(_$_Photo value, $Res Function(_$_Photo) then) =
       __$$_PhotoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int id, String url, int groupPhotoId, String room});
 }
 
 /// @nodoc
-class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res>
+class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
     implements _$$_PhotoCopyWith<$Res> {
   __$$_PhotoCopyWithImpl(_$_Photo _value, $Res Function(_$_Photo) _then)
-      : super(_value, (v) => _then(v as _$_Photo));
+      : super(_value, _then);
 
-  @override
-  _$_Photo get _value => super._value as _$_Photo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? url = freezed,
-    Object? groupPhotoId = freezed,
-    Object? room = freezed,
+    Object? id = null,
+    Object? url = null,
+    Object? groupPhotoId = null,
+    Object? room = null,
   }) {
     return _then(_$_Photo(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      groupPhotoId: groupPhotoId == freezed
+      groupPhotoId: null == groupPhotoId
           ? _value.groupPhotoId
           : groupPhotoId // ignore: cast_nullable_to_non_nullable
               as int,
-      room: room == freezed
+      room: null == room
           ? _value.room
           : room // ignore: cast_nullable_to_non_nullable
               as String,
@@ -150,24 +153,20 @@ class _$_Photo extends _Photo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Photo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality()
-                .equals(other.groupPhotoId, groupPhotoId) &&
-            const DeepCollectionEquality().equals(other.room, room));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.groupPhotoId, groupPhotoId) ||
+                other.groupPhotoId == groupPhotoId) &&
+            (identical(other.room, room) || other.room == room));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(groupPhotoId),
-      const DeepCollectionEquality().hash(room));
+  int get hashCode => Object.hash(runtimeType, id, url, groupPhotoId, room);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PhotoCopyWith<_$_Photo> get copyWith =>
       __$$_PhotoCopyWithImpl<_$_Photo>(this, _$identity);
 
