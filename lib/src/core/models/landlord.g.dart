@@ -7,7 +7,7 @@ part of 'landlord.dart';
 // **************************************************************************
 
 _$_Landlord _$$_LandlordFromJson(Map<String, dynamic> json) => _$_Landlord(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       name: json['name'] as String,
       accountNumber: json['accountNumber'] as String,
       sortCode: json['sortCode'] as String,

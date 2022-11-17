@@ -20,7 +20,7 @@ Tenant _$TenantFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Tenant {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'lease_id')
   int? get leaseId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $TenantCopyWith<$Res> {
       _$TenantCopyWithImpl<$Res, Tenant>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'lease_id') int? leaseId,
       String name,
       @JsonKey(name: 'phone_number') String phoneNumber,
@@ -62,7 +62,7 @@ class _$TenantCopyWithImpl<$Res, $Val extends Tenant>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? leaseId = freezed,
     Object? name = null,
     Object? phoneNumber = null,
@@ -70,10 +70,10 @@ class _$TenantCopyWithImpl<$Res, $Val extends Tenant>
     Object? walletAddress = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       leaseId: freezed == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
@@ -105,7 +105,7 @@ abstract class _$$_TenantCopyWith<$Res> implements $TenantCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'lease_id') int? leaseId,
       String name,
       @JsonKey(name: 'phone_number') String phoneNumber,
@@ -123,7 +123,7 @@ class __$$_TenantCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? leaseId = freezed,
     Object? name = null,
     Object? phoneNumber = null,
@@ -131,10 +131,10 @@ class __$$_TenantCopyWithImpl<$Res>
     Object? walletAddress = freezed,
   }) {
     return _then(_$_Tenant(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       leaseId: freezed == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
@@ -175,7 +175,7 @@ class _$_Tenant extends _Tenant {
       _$$_TenantFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'lease_id')
   final int? leaseId;
@@ -231,7 +231,7 @@ class _$_Tenant extends _Tenant {
 
 abstract class _Tenant extends Tenant {
   factory _Tenant(
-      {required final int id,
+      {required final int? id,
       @JsonKey(name: 'lease_id')
           required final int? leaseId,
       required final String name,
@@ -245,7 +245,7 @@ abstract class _Tenant extends Tenant {
   factory _Tenant.fromJson(Map<String, dynamic> json) = _$_Tenant.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'lease_id')
   int? get leaseId;

@@ -7,7 +7,7 @@ part of 'lease.dart';
 // **************************************************************************
 
 _$_Lease _$$_LeaseFromJson(Map<String, dynamic> json) => _$_Lease(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       startDate: DateTime.parse(json['start_date'] as String),
       endDate: json['end_date'] == null
           ? null

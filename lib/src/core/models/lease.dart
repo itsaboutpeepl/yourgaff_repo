@@ -6,7 +6,7 @@ part 'lease.g.dart';
 @Freezed()
 class Lease with _$Lease {
   factory Lease({
-    required int id,
+    required int? id,
     @JsonKey(name: 'start_date') required DateTime startDate,
     @JsonKey(name: 'end_date') required DateTime? endDate,
     required num rent,

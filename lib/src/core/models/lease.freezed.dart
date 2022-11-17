@@ -20,7 +20,7 @@ Lease _$LeaseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Lease {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'start_date')
   DateTime get startDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'end_date')
@@ -50,7 +50,7 @@ abstract class $LeaseCopyWith<$Res> {
       _$LeaseCopyWithImpl<$Res, Lease>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime? endDate,
       num rent,
@@ -76,7 +76,7 @@ class _$LeaseCopyWithImpl<$Res, $Val extends Lease>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? startDate = null,
     Object? endDate = freezed,
     Object? rent = null,
@@ -89,10 +89,10 @@ class _$LeaseCopyWithImpl<$Res, $Val extends Lease>
     Object? tenantId = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -144,7 +144,7 @@ abstract class _$$_LeaseCopyWith<$Res> implements $LeaseCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'start_date') DateTime startDate,
       @JsonKey(name: 'end_date') DateTime? endDate,
       num rent,
@@ -166,7 +166,7 @@ class __$$_LeaseCopyWithImpl<$Res> extends _$LeaseCopyWithImpl<$Res, _$_Lease>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? startDate = null,
     Object? endDate = freezed,
     Object? rent = null,
@@ -179,10 +179,10 @@ class __$$_LeaseCopyWithImpl<$Res> extends _$LeaseCopyWithImpl<$Res, _$_Lease>
     Object? tenantId = freezed,
   }) {
     return _then(_$_Lease(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -248,7 +248,7 @@ class _$_Lease extends _Lease {
       _$$_LeaseFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'start_date')
   final DateTime startDate;
@@ -338,7 +338,7 @@ class _$_Lease extends _Lease {
 
 abstract class _Lease extends Lease {
   factory _Lease(
-      {required final int id,
+      {required final int? id,
       @JsonKey(name: 'start_date') required final DateTime startDate,
       @JsonKey(name: 'end_date') required final DateTime? endDate,
       required final num rent,
@@ -354,7 +354,7 @@ abstract class _Lease extends Lease {
   factory _Lease.fromJson(Map<String, dynamic> json) = _$_Lease.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'start_date')
   DateTime get startDate;

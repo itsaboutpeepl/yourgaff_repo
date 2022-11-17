@@ -6,7 +6,7 @@ part 'photo.g.dart';
 @Freezed()
 class Photo with _$Photo {
   factory Photo({
-    required int id,
+    required int? id,
     required String url,
     required int groupPhotoId,
     required String room,

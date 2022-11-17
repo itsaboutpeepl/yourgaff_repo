@@ -7,7 +7,7 @@ part of 'tenant.dart';
 // **************************************************************************
 
 _$_Tenant _$$_TenantFromJson(Map<String, dynamic> json) => _$_Tenant(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       leaseId: json['lease_id'] as int?,
       name: json['name'] as String,
       phoneNumber: json['phone_number'] as String,

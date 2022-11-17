@@ -8,7 +8,7 @@ part of 'rent_payment.dart';
 
 _$_RentPayment _$$_RentPaymentFromJson(Map<String, dynamic> json) =>
     _$_RentPayment(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       paidDate: DateTime.parse(json['paidDate'] as String),
       amount: json['amount'] as int,
       leaseId: json['leaseId'] as int,

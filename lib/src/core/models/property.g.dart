@@ -7,7 +7,7 @@ part of 'property.dart';
 // **************************************************************************
 
 _$_Property _$$_PropertyFromJson(Map<String, dynamic> json) => _$_Property(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       addressLineOne: json['address_line_one'] as String,
       addressLineTwo: json['address_line_two'] as String?,
       postCode: json['post_code'] as String,

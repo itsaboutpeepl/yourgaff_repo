@@ -6,7 +6,7 @@ part 'rent_payment.g.dart';
 @Freezed()
 class RentPayment with _$RentPayment {
   factory RentPayment({
-    required int id,
+    required int? id,
     required DateTime paidDate,
     required int amount,
     required int leaseId,

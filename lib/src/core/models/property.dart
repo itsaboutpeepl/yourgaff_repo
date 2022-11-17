@@ -6,7 +6,7 @@ part 'property.g.dart';
 @Freezed()
 class Property with _$Property {
   factory Property({
-    required int id,
+    required int? id,
     @JsonKey(name: 'address_line_one') required String addressLineOne,
     @JsonKey(name: 'address_line_two') required String? addressLineTwo,
     @JsonKey(name: 'post_code') required String postCode,

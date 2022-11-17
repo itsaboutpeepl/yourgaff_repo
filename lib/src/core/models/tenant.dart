@@ -6,7 +6,7 @@ part 'tenant.g.dart';
 @Freezed()
 class Tenant with _$Tenant {
   factory Tenant({
-    required int id,
+    required int? id,
     @JsonKey(name: 'lease_id') required int? leaseId,
     required String name,
     @JsonKey(name: 'phone_number') required String phoneNumber,

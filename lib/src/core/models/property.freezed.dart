@@ -20,7 +20,7 @@ Property _$PropertyFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Property {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'address_line_one')
   String get addressLineOne => throw _privateConstructorUsedError;
   @JsonKey(name: 'address_line_two')
@@ -46,7 +46,7 @@ abstract class $PropertyCopyWith<$Res> {
       _$PropertyCopyWithImpl<$Res, Property>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'address_line_one') String addressLineOne,
       @JsonKey(name: 'address_line_two') String? addressLineTwo,
       @JsonKey(name: 'post_code') String postCode,
@@ -68,7 +68,7 @@ class _$PropertyCopyWithImpl<$Res, $Val extends Property>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? addressLineOne = null,
     Object? addressLineTwo = freezed,
     Object? postCode = null,
@@ -77,10 +77,10 @@ class _$PropertyCopyWithImpl<$Res, $Val extends Property>
     Object? landlordId = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       addressLineOne: null == addressLineOne
           ? _value.addressLineOne
           : addressLineOne // ignore: cast_nullable_to_non_nullable
@@ -117,7 +117,7 @@ abstract class _$$_PropertyCopyWith<$Res> implements $PropertyCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       @JsonKey(name: 'address_line_one') String addressLineOne,
       @JsonKey(name: 'address_line_two') String? addressLineTwo,
       @JsonKey(name: 'post_code') String postCode,
@@ -137,7 +137,7 @@ class __$$_PropertyCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? addressLineOne = null,
     Object? addressLineTwo = freezed,
     Object? postCode = null,
@@ -146,10 +146,10 @@ class __$$_PropertyCopyWithImpl<$Res>
     Object? landlordId = freezed,
   }) {
     return _then(_$_Property(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       addressLineOne: null == addressLineOne
           ? _value.addressLineOne
           : addressLineOne // ignore: cast_nullable_to_non_nullable
@@ -195,7 +195,7 @@ class _$_Property extends _Property {
       _$$_PropertyFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'address_line_one')
   final String addressLineOne;
@@ -261,7 +261,7 @@ class _$_Property extends _Property {
 
 abstract class _Property extends Property {
   factory _Property(
-      {required final int id,
+      {required final int? id,
       @JsonKey(name: 'address_line_one')
           required final String addressLineOne,
       @JsonKey(name: 'address_line_two')
@@ -279,7 +279,7 @@ abstract class _Property extends Property {
   factory _Property.fromJson(Map<String, dynamic> json) = _$_Property.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'address_line_one')
   String get addressLineOne;

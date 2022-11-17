@@ -20,7 +20,7 @@ Photo _$PhotoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Photo {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   int get groupPhotoId => throw _privateConstructorUsedError;
   String get room => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
       _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
-  $Res call({int id, String url, int groupPhotoId, String room});
+  $Res call({int? id, String url, int groupPhotoId, String room});
 }
 
 /// @nodoc
@@ -51,16 +51,16 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? url = null,
     Object? groupPhotoId = null,
     Object? room = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -83,7 +83,7 @@ abstract class _$$_PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
       __$$_PhotoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String url, int groupPhotoId, String room});
+  $Res call({int? id, String url, int groupPhotoId, String room});
 }
 
 /// @nodoc
@@ -95,16 +95,16 @@ class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? url = null,
     Object? groupPhotoId = null,
     Object? room = null,
   }) {
     return _then(_$_Photo(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ class _$_Photo extends _Photo {
       _$$_PhotoFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String url;
   @override
@@ -180,7 +180,7 @@ class _$_Photo extends _Photo {
 
 abstract class _Photo extends Photo {
   factory _Photo(
-      {required final int id,
+      {required final int? id,
       required final String url,
       required final int groupPhotoId,
       required final String room}) = _$_Photo;
@@ -189,7 +189,7 @@ abstract class _Photo extends Photo {
   factory _Photo.fromJson(Map<String, dynamic> json) = _$_Photo.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String get url;
   @override

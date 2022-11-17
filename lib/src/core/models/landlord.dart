@@ -6,7 +6,7 @@ part 'landlord.g.dart';
 @Freezed()
 class Landlord with _$Landlord {
   factory Landlord({
-    required int id,
+    required int? id,
     required String name,
     required String accountNumber,
     required String sortCode,

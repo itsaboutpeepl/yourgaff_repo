@@ -20,7 +20,7 @@ Landlord _$LandlordFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Landlord {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get accountNumber => throw _privateConstructorUsedError;
   String get sortCode => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $LandlordCopyWith<$Res> {
       _$LandlordCopyWithImpl<$Res, Landlord>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String name,
       String accountNumber,
       String sortCode,
@@ -60,7 +60,7 @@ class _$LandlordCopyWithImpl<$Res, $Val extends Landlord>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? accountNumber = null,
     Object? sortCode = null,
@@ -68,10 +68,10 @@ class _$LandlordCopyWithImpl<$Res, $Val extends Landlord>
     Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -104,7 +104,7 @@ abstract class _$$_LandlordCopyWith<$Res> implements $LandlordCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String name,
       String accountNumber,
       String sortCode,
@@ -123,7 +123,7 @@ class __$$_LandlordCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? accountNumber = null,
     Object? sortCode = null,
@@ -131,10 +131,10 @@ class __$$_LandlordCopyWithImpl<$Res>
     Object? phoneNumber = null,
   }) {
     return _then(_$_Landlord(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -175,7 +175,7 @@ class _$_Landlord extends _Landlord {
       _$$_LandlordFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String name;
   @override
@@ -229,7 +229,7 @@ class _$_Landlord extends _Landlord {
 
 abstract class _Landlord extends Landlord {
   factory _Landlord(
-      {required final int id,
+      {required final int? id,
       required final String name,
       required final String accountNumber,
       required final String sortCode,
@@ -240,7 +240,7 @@ abstract class _Landlord extends Landlord {
   factory _Landlord.fromJson(Map<String, dynamic> json) = _$_Landlord.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String get name;
   @override

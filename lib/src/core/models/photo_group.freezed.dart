@@ -20,7 +20,7 @@ PhotoGroup _$PhotoGroupFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PhotoGroup {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   List<Photo> get photos => throw _privateConstructorUsedError;
   int get leaseNumber => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $PhotoGroupCopyWith<$Res> {
       _$PhotoGroupCopyWithImpl<$Res, PhotoGroup>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       DateTime date,
       List<Photo> photos,
       int leaseNumber,
@@ -59,17 +59,17 @@ class _$PhotoGroupCopyWithImpl<$Res, $Val extends PhotoGroup>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? date = null,
     Object? photos = null,
     Object? leaseNumber = null,
     Object? stauts = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -99,7 +99,7 @@ abstract class _$$_PhotoGroupCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       DateTime date,
       List<Photo> photos,
       int leaseNumber,
@@ -117,17 +117,17 @@ class __$$_PhotoGroupCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? date = null,
     Object? photos = null,
     Object? leaseNumber = null,
     Object? stauts = null,
   }) {
     return _then(_$_PhotoGroup(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ class _$_PhotoGroup extends _PhotoGroup {
       _$$_PhotoGroupFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final DateTime date;
   final List<Photo> _photos;
@@ -218,7 +218,7 @@ class _$_PhotoGroup extends _PhotoGroup {
 
 abstract class _PhotoGroup extends PhotoGroup {
   factory _PhotoGroup(
-      {required final int id,
+      {required final int? id,
       required final DateTime date,
       required final List<Photo> photos,
       required final int leaseNumber,
@@ -229,7 +229,7 @@ abstract class _PhotoGroup extends PhotoGroup {
       _$_PhotoGroup.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   DateTime get date;
   @override

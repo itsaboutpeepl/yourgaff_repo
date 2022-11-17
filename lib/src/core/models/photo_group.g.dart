@@ -8,7 +8,7 @@ part of 'photo_group.dart';
 
 _$_PhotoGroup _$$_PhotoGroupFromJson(Map<String, dynamic> json) =>
     _$_PhotoGroup(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       date: DateTime.parse(json['date'] as String),
       photos: (json['photos'] as List<dynamic>)
           .map((e) => Photo.fromJson(e as Map<String, dynamic>))

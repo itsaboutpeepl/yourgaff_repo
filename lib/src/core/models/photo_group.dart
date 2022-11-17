@@ -8,7 +8,7 @@ part 'photo_group.g.dart';
 @Freezed()
 class PhotoGroup with _$PhotoGroup {
   factory PhotoGroup({
-    required int id,
+    required int? id,
     required DateTime date,
     required List<Photo> photos,
     required int leaseNumber,
