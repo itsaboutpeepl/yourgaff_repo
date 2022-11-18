@@ -32,8 +32,8 @@ class Lease with _$Lease {
       'propertyId': propertyId,
       'paymentDate': paymentDate,
       'tenantId': tenantId,
-      'startDate': startDate,
-      'endDate': endDate
+      'startDate': startDate.toIso8601String(),
+      'endDate': endDate == null ? null : endDate!.toIso8601String(),
     };
   }
 }
