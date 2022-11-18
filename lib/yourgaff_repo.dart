@@ -1,5 +1,6 @@
 library yourgaff_repo;
 
+export 'src/core/models/dashboard_dto.dart';
 export 'src/core/models/landlord.dart';
 export 'src/core/models/lease.dart';
 export 'src/core/models/photo.dart';
