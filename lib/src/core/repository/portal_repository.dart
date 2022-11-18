@@ -28,5 +28,5 @@ abstract class PortalRepository {
 
   Future<List<Lease>> getAllLeases();
 
-  Future<void> createNewLease();
+  Future<void> createNewLease(Lease lease);
 }

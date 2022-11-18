@@ -145,7 +145,7 @@ class MockPortalRepository implements PortalRepository {
   }
 
   @override
-  Future<void> createNewLease() {
+  Future<void> createNewLease(Lease lease) {
     // TODO: implement createNewLease
     throw UnimplementedError();
   }
