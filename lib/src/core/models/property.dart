@@ -19,6 +19,15 @@ class Property with _$Property {
 
   factory Property.fromJson(Map<String, dynamic> json) =>
       _$PropertyFromJson(json);
+
+  Map<String, dynamic> toJsonForAPI() {
+    return {
+      'addressLineOne': addressLineOne,
+      'addressLineTwo': addressLineTwo,
+      'postCode': postCode,
+      'propertyType': propertyType,
+    };
+  }
 }
 
 // Sample Lease object from API
@@ -30,4 +39,12 @@ class Property with _$Property {
 //   "property_type": "bungalow",
 //   "current_lease_id": 1,
 //   "landlord_id": 1
+// }
+
+// Sample Lease object expected by API
+// {
+//   "addressLineOne": "sexy AF ",
+//   "addressLineTwo": "hehhehee",
+//   "postCode": "l1 0ax",
+//   "propertyType": "bungalow",
 // }
