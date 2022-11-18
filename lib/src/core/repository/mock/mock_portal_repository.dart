@@ -151,7 +151,7 @@ class MockPortalRepository implements PortalRepository {
   }
 
   @override
-  Future<Lease> getAllLeases() {
+  Future<List<Lease>> getAllLeases() {
     // TODO: implement getAllLeases
     throw UnimplementedError();
   }

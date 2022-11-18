@@ -26,7 +26,7 @@ abstract class PortalRepository {
 
   Future<void> saveRentPayment(RentPayment rentPayment);
 
-  Future<Lease> getAllLeases();
+  Future<List<Lease>> getAllLeases();
 
   Future<void> createNewLease();
 }
