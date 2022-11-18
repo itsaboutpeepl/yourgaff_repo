@@ -21,10 +21,13 @@ RentPayment _$RentPaymentFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RentPayment {
   int? get id => throw _privateConstructorUsedError;
-  DateTime get paidDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'paid_date')
+  DateTime? get paidDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'due_date')
+  DateTime? get dueDate => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'lease_id')
   int get leaseId => throw _privateConstructorUsedError;
-  int get rewardAmount => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,10 +44,10 @@ abstract class $RentPaymentCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
-      DateTime paidDate,
+      @JsonKey(name: 'paid_date') DateTime? paidDate,
+      @JsonKey(name: 'due_date') DateTime? dueDate,
       int amount,
-      int leaseId,
-      int rewardAmount,
+      @JsonKey(name: 'lease_id') int leaseId,
       String status});
 }
 
@@ -62,10 +65,10 @@ class _$RentPaymentCopyWithImpl<$Res, $Val extends RentPayment>
   @override
   $Res call({
     Object? id = freezed,
-    Object? paidDate = null,
+    Object? paidDate = freezed,
+    Object? dueDate = freezed,
     Object? amount = null,
     Object? leaseId = null,
-    Object? rewardAmount = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -73,10 +76,14 @@ class _$RentPaymentCopyWithImpl<$Res, $Val extends RentPayment>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      paidDate: null == paidDate
+      paidDate: freezed == paidDate
           ? _value.paidDate
           : paidDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      dueDate: freezed == dueDate
+          ? _value.dueDate
+          : dueDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -84,10 +91,6 @@ class _$RentPaymentCopyWithImpl<$Res, $Val extends RentPayment>
       leaseId: null == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
-              as int,
-      rewardAmount: null == rewardAmount
-          ? _value.rewardAmount
-          : rewardAmount // ignore: cast_nullable_to_non_nullable
               as int,
       status: null == status
           ? _value.status
@@ -107,10 +110,10 @@ abstract class _$$_RentPaymentCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
-      DateTime paidDate,
+      @JsonKey(name: 'paid_date') DateTime? paidDate,
+      @JsonKey(name: 'due_date') DateTime? dueDate,
       int amount,
-      int leaseId,
-      int rewardAmount,
+      @JsonKey(name: 'lease_id') int leaseId,
       String status});
 }
 
@@ -126,10 +129,10 @@ class __$$_RentPaymentCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? paidDate = null,
+    Object? paidDate = freezed,
+    Object? dueDate = freezed,
     Object? amount = null,
     Object? leaseId = null,
-    Object? rewardAmount = null,
     Object? status = null,
   }) {
     return _then(_$_RentPayment(
@@ -137,10 +140,14 @@ class __$$_RentPaymentCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      paidDate: null == paidDate
+      paidDate: freezed == paidDate
           ? _value.paidDate
           : paidDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
+      dueDate: freezed == dueDate
+          ? _value.dueDate
+          : dueDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -148,10 +155,6 @@ class __$$_RentPaymentCopyWithImpl<$Res>
       leaseId: null == leaseId
           ? _value.leaseId
           : leaseId // ignore: cast_nullable_to_non_nullable
-              as int,
-      rewardAmount: null == rewardAmount
-          ? _value.rewardAmount
-          : rewardAmount // ignore: cast_nullable_to_non_nullable
               as int,
       status: null == status
           ? _value.status
@@ -166,10 +169,10 @@ class __$$_RentPaymentCopyWithImpl<$Res>
 class _$_RentPayment extends _RentPayment {
   _$_RentPayment(
       {required this.id,
-      required this.paidDate,
+      @JsonKey(name: 'paid_date') required this.paidDate,
+      @JsonKey(name: 'due_date') required this.dueDate,
       required this.amount,
-      required this.leaseId,
-      required this.rewardAmount,
+      @JsonKey(name: 'lease_id') required this.leaseId,
       required this.status})
       : super._();
 
@@ -179,19 +182,22 @@ class _$_RentPayment extends _RentPayment {
   @override
   final int? id;
   @override
-  final DateTime paidDate;
+  @JsonKey(name: 'paid_date')
+  final DateTime? paidDate;
+  @override
+  @JsonKey(name: 'due_date')
+  final DateTime? dueDate;
   @override
   final int amount;
   @override
+  @JsonKey(name: 'lease_id')
   final int leaseId;
-  @override
-  final int rewardAmount;
   @override
   final String status;
 
   @override
   String toString() {
-    return 'RentPayment(id: $id, paidDate: $paidDate, amount: $amount, leaseId: $leaseId, rewardAmount: $rewardAmount, status: $status)';
+    return 'RentPayment(id: $id, paidDate: $paidDate, dueDate: $dueDate, amount: $amount, leaseId: $leaseId, status: $status)';
   }
 
   @override
@@ -202,17 +208,16 @@ class _$_RentPayment extends _RentPayment {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.paidDate, paidDate) ||
                 other.paidDate == paidDate) &&
+            (identical(other.dueDate, dueDate) || other.dueDate == dueDate) &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.leaseId, leaseId) || other.leaseId == leaseId) &&
-            (identical(other.rewardAmount, rewardAmount) ||
-                other.rewardAmount == rewardAmount) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, paidDate, amount, leaseId, rewardAmount, status);
+  int get hashCode =>
+      Object.hash(runtimeType, id, paidDate, dueDate, amount, leaseId, status);
 
   @JsonKey(ignore: true)
   @override
@@ -231,10 +236,10 @@ class _$_RentPayment extends _RentPayment {
 abstract class _RentPayment extends RentPayment {
   factory _RentPayment(
       {required final int? id,
-      required final DateTime paidDate,
+      @JsonKey(name: 'paid_date') required final DateTime? paidDate,
+      @JsonKey(name: 'due_date') required final DateTime? dueDate,
       required final int amount,
-      required final int leaseId,
-      required final int rewardAmount,
+      @JsonKey(name: 'lease_id') required final int leaseId,
       required final String status}) = _$_RentPayment;
   _RentPayment._() : super._();
 
@@ -244,13 +249,16 @@ abstract class _RentPayment extends RentPayment {
   @override
   int? get id;
   @override
-  DateTime get paidDate;
+  @JsonKey(name: 'paid_date')
+  DateTime? get paidDate;
+  @override
+  @JsonKey(name: 'due_date')
+  DateTime? get dueDate;
   @override
   int get amount;
   @override
+  @JsonKey(name: 'lease_id')
   int get leaseId;
-  @override
-  int get rewardAmount;
   @override
   String get status;
   @override
