@@ -1,4 +1,5 @@
 import 'package:yourgaff_repo/src/core/models/landlord.dart';
+import 'package:yourgaff_repo/src/core/models/lease.dart';
 import 'package:yourgaff_repo/src/core/models/photo_group.dart';
 import 'package:yourgaff_repo/src/core/models/property.dart';
 import 'package:yourgaff_repo/src/core/models/rent_payment.dart';
@@ -140,6 +141,18 @@ class MockPortalRepository implements PortalRepository {
   @override
   Future<void> saveRentPayment(RentPayment rentPayment) {
     // TODO: implement saveRentPayment
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> createNewLease() {
+    // TODO: implement createNewLease
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Lease> getAllLeases() {
+    // TODO: implement getAllLeases
     throw UnimplementedError();
   }
 }
