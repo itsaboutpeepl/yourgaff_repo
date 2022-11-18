@@ -22,6 +22,20 @@ class Lease with _$Lease {
   const Lease._();
 
   factory Lease.fromJson(Map<String, dynamic> json) => _$LeaseFromJson(json);
+
+  Map<String, dynamic> toJsonForAPI() {
+    return {
+      'rent': rent,
+      'deposit': deposit,
+      'status': status,
+      'contractURL': contractUrl,
+      'propertyId': propertyId,
+      'paymentDate': paymentDate,
+      'tenantId': tenantId,
+      'startDate': startDate,
+      'endDate': endDate
+    };
+  }
 }
 
 // Sample Lease object from API
@@ -37,4 +51,16 @@ class Lease with _$Lease {
 //   "rewards_pot": 100,
 //   "property_id": 22,
 //   "tenant_id": 6,
+// }
+
+//Sample lease object expected by API
+// {
+//     "rent": 400,
+//     "deposit": 400,
+//     "status": "active",
+//     "contractURL": "http://example.com/",
+//     "propertyId": 16, 
+//     "paymentDate": 28,
+//     "tenantId": 1,
+//     "startDate": "2021-01-01"
 // }
