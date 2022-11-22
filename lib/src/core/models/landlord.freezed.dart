@@ -22,9 +22,12 @@ Landlord _$LandlordFromJson(Map<String, dynamic> json) {
 mixin _$Landlord {
   int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'account_number')
   String get accountNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sort_code')
   String get sortCode => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'phone_number')
   String get phoneNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,10 +44,10 @@ abstract class $LandlordCopyWith<$Res> {
   $Res call(
       {int? id,
       String name,
-      String accountNumber,
-      String sortCode,
+      @JsonKey(name: 'account_number') String accountNumber,
+      @JsonKey(name: 'sort_code') String sortCode,
       String email,
-      String phoneNumber});
+      @JsonKey(name: 'phone_number') String phoneNumber});
 }
 
 /// @nodoc
@@ -106,10 +109,10 @@ abstract class _$$_LandlordCopyWith<$Res> implements $LandlordCopyWith<$Res> {
   $Res call(
       {int? id,
       String name,
-      String accountNumber,
-      String sortCode,
+      @JsonKey(name: 'account_number') String accountNumber,
+      @JsonKey(name: 'sort_code') String sortCode,
       String email,
-      String phoneNumber});
+      @JsonKey(name: 'phone_number') String phoneNumber});
 }
 
 /// @nodoc
@@ -165,10 +168,10 @@ class _$_Landlord extends _Landlord {
   _$_Landlord(
       {required this.id,
       required this.name,
-      required this.accountNumber,
-      required this.sortCode,
+      @JsonKey(name: 'account_number') required this.accountNumber,
+      @JsonKey(name: 'sort_code') required this.sortCode,
       required this.email,
-      required this.phoneNumber})
+      @JsonKey(name: 'phone_number') required this.phoneNumber})
       : super._();
 
   factory _$_Landlord.fromJson(Map<String, dynamic> json) =>
@@ -179,12 +182,15 @@ class _$_Landlord extends _Landlord {
   @override
   final String name;
   @override
+  @JsonKey(name: 'account_number')
   final String accountNumber;
   @override
+  @JsonKey(name: 'sort_code')
   final String sortCode;
   @override
   final String email;
   @override
+  @JsonKey(name: 'phone_number')
   final String phoneNumber;
 
   @override
@@ -229,12 +235,13 @@ class _$_Landlord extends _Landlord {
 
 abstract class _Landlord extends Landlord {
   factory _Landlord(
-      {required final int? id,
-      required final String name,
-      required final String accountNumber,
-      required final String sortCode,
-      required final String email,
-      required final String phoneNumber}) = _$_Landlord;
+          {required final int? id,
+          required final String name,
+          @JsonKey(name: 'account_number') required final String accountNumber,
+          @JsonKey(name: 'sort_code') required final String sortCode,
+          required final String email,
+          @JsonKey(name: 'phone_number') required final String phoneNumber}) =
+      _$_Landlord;
   _Landlord._() : super._();
 
   factory _Landlord.fromJson(Map<String, dynamic> json) = _$_Landlord.fromJson;
@@ -244,12 +251,15 @@ abstract class _Landlord extends Landlord {
   @override
   String get name;
   @override
+  @JsonKey(name: 'account_number')
   String get accountNumber;
   @override
+  @JsonKey(name: 'sort_code')
   String get sortCode;
   @override
   String get email;
   @override
+  @JsonKey(name: 'phone_number')
   String get phoneNumber;
   @override
   @JsonKey(ignore: true)

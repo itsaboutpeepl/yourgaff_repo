@@ -8,10 +8,10 @@ class Landlord with _$Landlord {
   factory Landlord({
     required int? id,
     required String name,
-    required String accountNumber,
-    required String sortCode,
+    @JsonKey(name: 'account_number') required String accountNumber,
+    @JsonKey(name: 'sort_code') required String sortCode,
     required String email,
-    required String phoneNumber,
+    @JsonKey(name: 'phone_number') required String phoneNumber,
   }) = _Landlord;
 
   const Landlord._();
