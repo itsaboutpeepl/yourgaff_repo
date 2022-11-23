@@ -7,6 +7,7 @@ export 'src/core/models/photo.dart';
 export 'src/core/models/photo_group.dart';
 export 'src/core/models/property.dart';
 export 'src/core/models/rent_payment.dart';
+export 'src/core/models/rent_payment_dto.dart';
 export 'src/core/models/tenant.dart';
 export 'src/core/repository/app_respository.dart';
 export 'src/core/repository/mock/mock_portal_repository.dart';
