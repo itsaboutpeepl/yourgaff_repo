@@ -4,6 +4,7 @@ import 'package:yourgaff_repo/src/core/models/lease.dart';
 import 'package:yourgaff_repo/src/core/models/photo_group.dart';
 import 'package:yourgaff_repo/src/core/models/property.dart';
 import 'package:yourgaff_repo/src/core/models/rent_payment.dart';
+import 'package:yourgaff_repo/src/core/models/rent_payment_dto.dart';
 import 'package:yourgaff_repo/src/core/models/tenant.dart';
 
 abstract class PortalRepository {
@@ -23,7 +24,7 @@ abstract class PortalRepository {
 
   Future<void> saveLandlord(Landlord landlord);
 
-  Future<List<RentPayment>> loadRentPayment();
+  Future<List<RentPaymentDTO>> loadRentPayment();
 
   Future<void> saveRentPayment(RentPayment rentPayment);
 

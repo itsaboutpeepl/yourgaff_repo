@@ -4,6 +4,7 @@ import 'package:yourgaff_repo/src/core/models/lease.dart';
 import 'package:yourgaff_repo/src/core/models/photo_group.dart';
 import 'package:yourgaff_repo/src/core/models/property.dart';
 import 'package:yourgaff_repo/src/core/models/rent_payment.dart';
+import 'package:yourgaff_repo/src/core/models/rent_payment_dto.dart';
 import 'package:yourgaff_repo/src/core/models/tenant.dart';
 import 'package:yourgaff_repo/src/core/repository/portal_repository.dart';
 
@@ -134,7 +135,7 @@ class MockPortalRepository implements PortalRepository {
   }
 
   @override
-  Future<List<RentPayment>> loadRentPayment() {
+  Future<List<RentPaymentDTO>> loadRentPayment() {
     // TODO: implement loadRentPayment
     throw UnimplementedError();
   }
