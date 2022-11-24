@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:yourgaff_repo/src/core/models/dashboard_dto.dart';
 import 'package:yourgaff_repo/src/core/models/landlord.dart';
 import 'package:yourgaff_repo/src/core/models/lease.dart';
@@ -159,7 +160,7 @@ class MockPortalRepository implements PortalRepository {
   }
 
   @override
-  Future<void> saveLease(Lease lease) {
+  Future<void> saveLease(FormData leaseData) {
     // TODO: implement saveLease
     throw UnimplementedError();
   }

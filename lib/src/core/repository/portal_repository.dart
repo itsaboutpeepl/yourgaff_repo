@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:yourgaff_repo/src/core/models/dashboard_dto.dart';
 import 'package:yourgaff_repo/src/core/models/landlord.dart';
 import 'package:yourgaff_repo/src/core/models/lease.dart';
@@ -30,7 +31,7 @@ abstract class PortalRepository {
 
   Future<List<Lease>> loadLease();
 
-  Future<void> saveLease(Lease lease);
+  Future<void> saveLease(FormData leaseData);
 
   Future<List<DashboardDTO>> loadDashboard();
 }
