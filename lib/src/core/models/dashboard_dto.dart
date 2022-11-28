@@ -11,7 +11,9 @@ class DashboardDTO {
   factory DashboardDTO.fromJson(Map<String, dynamic> json) {
     final List<RentPayment> rentPaymentList = [];
     RentPayment? nextRentPayment;
-    for (final element in json['rentpayment'] as Iterable<dynamic>) {
+
+    for (final element in json['rentpayment'] as Iterable<dynamic>? ??
+        List<RentPayment>.empty()) {
       rentPaymentList
           .add(RentPayment.fromJson(element as Map<String, dynamic>));
     }
