@@ -23,6 +23,7 @@ class Tenant with _$Tenant {
       'name': name,
       'phoneNumber': phoneNumber,
       'email': email,
+      'walletAddress': walletAddress,
     };
   }
 }
