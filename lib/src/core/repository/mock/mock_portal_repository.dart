@@ -164,4 +164,10 @@ class MockPortalRepository implements PortalRepository {
     // TODO: implement saveLease
     throw UnimplementedError();
   }
+
+  @override
+  Future<void> markAsPaid(RentPayment rentPayment) {
+    // TODO: implement markAsPaid
+    throw UnimplementedError();
+  }
 }
